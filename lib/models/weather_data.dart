@@ -1,7 +1,9 @@
 import 'package:weather_flutter_getx/models/weather_data_current.dart';
 
 class WeatherData {
-  final WeatherDataCurrent current;
+  final WeatherDataCurrent? current;
 
-  WeatherData(this.current);
+  WeatherData([this.current]);
+
+  WeatherDataCurrent getCurrentWeather() => current!;
 }
