@@ -1,12 +1,14 @@
 import 'package:weather_flutter_getx/models/weather_data_current.dart';
 
-class WeatherDataCurrent {
-  final Current current;
+class WeatherDataHourly {
+  List<Hourly> hourly;
 
-  WeatherDataCurrent({required this.current});
+  WeatherDataHourly({required this.hourly});
 
-  factory WeatherDataCurrent.fromJson(Map<String, dynamic> json) =>
-      WeatherDataCurrent(current: Current.fromJson(json['current']));
+  factory WeatherDataHourly.fromJson(Map<String, dynamic> json) =>
+      WeatherDataHourly(
+          hourly:
+              List<Hourly>.from(json['hourly'].map((e) => Hourly.fromJson(e))));
 }
 
 class Hourly {

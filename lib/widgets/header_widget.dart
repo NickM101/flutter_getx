@@ -27,11 +27,16 @@ class _HeaderWidgetState extends State<HeaderWidget> {
   }
 
   getAddress(lat, long) async {
-    List<Placemark> placemark = await placemarkFromCoordinates(lat, long);
-    Placemark place = placemark[0];
-    setState(() {
-      city = place.locality!;
-    });
+    try {
+      List<Placemark> placemark = await placemarkFromCoordinates(lat, long);
+      print(placemark);
+      Placemark place = placemark[0];
+      setState(() {
+        city = place.locality!;
+      });
+    } catch (e) {
+      print('Address was not retrieved, please fill out manually');
+    }
   }
 
   @override
