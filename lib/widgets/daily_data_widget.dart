@@ -30,7 +30,8 @@ class DailyDataForecast extends StatelessWidget {
           child: const Text('Next Days',
               style:
                   TextStyle(color: CustomColors.textColorBlack, fontSize: 17)),
-        )
+        ),
+        dailyList(),
       ]),
     );
   }
